@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.mapper.BookMapper">
+	<select id="findBook" parameterType="map" resultType="book">
+		select * from books limit #{page},#{pageNumber}
+	</select>
+	<select id="findBookCount" resultType="int">
+		select count(*) from books
+	</select>
+	<insert id="addBook" parameterType="book">
+		insert into books values(default,#{name},#{author},#{price},#{date})
+	</insert>
+	<update id="updateBook" parameterType="book">
+		update books set name = #{name},author = #{author}, price = #{price},date = #{date} where id = #{id}
+	</update>
+	<delete id="deleteBook" parameterType="int">
+		delete from books where id = #{id}
+	</delete>
+	<insert id="addLog" parameterType="log">
+		insert into log values(default,#{userName},#{className},#{methodName},#{operteContent},#{exceptionMessage})
+	</insert>
+</mapper>

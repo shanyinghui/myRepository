@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 配置自动扫描的包 扫描注解包 -->
+	<context:component-scan base-package="com.buba.controller,com.buba.log"/>
+	<!-- 注解驱动驱动 -->
+	<mvc:annotation-driven/>
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
+	<mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+    <mvc:resources location="/layui/" mapping="/layui/**"></mvc:resources>
+	<!-- 配置视图解析器 把Controller方法返回的视图解析为实际视图 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 前缀 访问的页面所在路径 -->
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+		<!-- 后缀 页面类型 -->
+		<property name="suffix" value=".jsp"/>
+	</bean>
+</beans>
