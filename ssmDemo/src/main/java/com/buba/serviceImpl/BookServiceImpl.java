@@ -1,5 +1,6 @@
 package com.buba.serviceImpl;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +16,8 @@ import com.buba.pojo.Book;
 import com.buba.pojo.Log;
 import com.buba.service.BookService;
 @Service()
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService,Serializable{
+	
 	@Resource
 	BookMapper bookMapper;
 	

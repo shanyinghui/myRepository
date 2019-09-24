@@ -1,5 +1,6 @@
 package com.buba.service;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.buba.pojo.Book;
 import com.buba.pojo.Log;
 
-public interface BookService {
+public interface BookService extends Serializable{
 	List<Book> findBook(Map parameterMap);
 
 	int addBook(Book book);

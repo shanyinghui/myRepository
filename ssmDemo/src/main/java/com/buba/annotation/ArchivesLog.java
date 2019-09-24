@@ -21,4 +21,5 @@ public @interface ArchivesLog {
 	 * @return
 	 */
 	public String operteContent() default "";
+	
 }
