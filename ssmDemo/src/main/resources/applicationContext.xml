@@ -14,6 +14,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd"
 	default-autowire="byName" default-lazy-init="true">
 	<!-- 	spring注解扫描 -->
+	
 	<context:component-scan base-package="com.buba.serviceImpl" />
 	<!-- 配置连接池信息 -->
 	<bean id="dataSource"
